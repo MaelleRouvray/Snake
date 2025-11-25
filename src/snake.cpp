@@ -7,6 +7,11 @@ Snake::Snake(int x, int y) {
     grandit_apres = false;
 }
 
+// accéder au corps du snake
+std::vector<std::pair<int,int>> Snake::get_snake(){
+    return corps;
+}
+
 
 // nouvelle direction
 void Snake::set_direction(int dx,int dy){
