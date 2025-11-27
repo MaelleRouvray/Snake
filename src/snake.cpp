@@ -8,10 +8,13 @@ Snake::Snake(int x, int y) {
 }
 
 // accéder au corps du snake
-std::vector<std::pair<int,int>> Snake::get_snake(){
+const std::vector<std::pair<int,int>> Snake::get_snake() const{
     return corps;
 }
 
+void Snake::grandir(){
+    grandit_apres = true ;
+}
 
 // nouvelle direction
 void Snake::set_direction(int dx,int dy){

@@ -2,27 +2,34 @@
 #include "food.h"
 #include "snake.h"
 
-Food::Food(std::pair<int, int> a = {0,0}) : food(a) {}
 
+Food::Food(std::pair<int, int> a) : food(a) {}
 
+std::pair<int,int> Food::get_food() const{
+    return food;
+}
 
-std::pair<int , int> Food::generate_food(Snake snake){
+std::pair<int,int> Food::generate_food(Snake snake){
     std :: mt19937 gen(42); 
-    int a =; 
-    int b =; /* taille du plateau */
-    int x = std::uniform_int_distribution<int>(0,a); 
-    int y = std::uniform_int_distribution<int>(0,b); 
+    // valeurs à modifier
+    int a = 30; 
+    int b = 20; /* taille du plateau */
+    std::uniform_int_distribution<int> distX(0,a); 
+    std::uniform_int_distribution<int> distY(0,b); 
+
+    int x = distX(gen);
+    int y = distY(gen);
     std::pair<int,int> food = {x,y}; 
 
-    /*verifié que la nouriture n'est pas sur le snake*/
-
+    /*verifie que la nouriture n'est pas sur le snake*/
     int i = 0;
-    std::vector<std::pair<int,int>> corps = get_snake(); 
-    while (i<corps.size()){
+    std::vector<std::pair<int,int>> corps = snake.get_snake(); 
+
+    while (i < corps.size()){
         
-        if (food==Snake::corps[i]){
-            int x = std::uniform_int_distribution<int>(0,a); 
-            int y = std::uniform_int_distribution<int>(0,b);  
+        if (food == corps[i]){
+            int x = distX(gen); 
+            int y = distY(gen);  
             i=0; 
             std::pair<int,int> food = {x,y}; 
         }
@@ -36,8 +43,10 @@ std::pair<int , int> Food::generate_food(Snake snake){
 
 
 std::pair<int,int> Food::new_food(Snake snake){
-    corps = get_snake(); 
-    if (food == corps.front()){
-        food = generate_food(Snake snake); /*faire grandir ke snake*/
-    }
+    food = generate_food(snake);
+    // std::vector<std::pair<int,int>> corps = snake.get_snake(); 
+    // if (food == corps.front()){
+    //     food = generate_food(snake); /*faire grandir le snake*/
+    // }
+    return food;
 }

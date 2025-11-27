@@ -18,15 +18,18 @@ class Food {
     public: 
 
     /*constructeur */
-    Food(std::pair<int, int>); 
+    Food(std::pair<int,int> a = {0,0}); 
+
+    /* accesseur */
+    std::pair<int,int> get_food() const;
 
     /*génère les coordonnées de la nouriture*/
-    std::pair<int,int> generate_food(); 
+    std::pair<int,int> generate_food(const Snake snake); 
 
     /*nouvelle nouriture*/
-    std::pair<int,int> new_food(); 
+    std::pair<int,int> new_food(const Snake snake); 
 
-}
+};
 
 
 #endif
