@@ -1,7 +1,14 @@
 cmake_minimum_required(VERSION 3.28)
-<<<<<<< HEAD
-
-project(Snake)
-=======
 project(snakeProject)  
->>>>>>> e4cd06571208e1977a0fb08d081c5c2c1d397dc2
+
+set(CMAKE_CXX_STANDARD 17)
+
+include_directories(include)
+
+file(GLOB SOURCES src/*.cpp)
+
+add_executable(${PROJECT_NAME} ${SOURCES})
+
+
+
+
