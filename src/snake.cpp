@@ -40,6 +40,6 @@ bool Snake::collision(){
         if (corps[i]==tete){
             return true;
         }
-        return false;
     }
+    return false;
 }
