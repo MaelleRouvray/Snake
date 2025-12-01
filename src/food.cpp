@@ -21,7 +21,7 @@ std::pair<int,int> Food::generate_food(Snake snake){
     int y = distY(gen);
     std::pair<int,int> food = {x,y}; 
 
-    /*verifie que la nouriture n'est pas sur le snake*/
+    //verifie que la nouriture n'est pas sur le snake//
     int i = 0;
     std::vector<std::pair<int,int>> corps = snake.get_snake(); 
 

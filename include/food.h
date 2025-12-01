@@ -6,18 +6,27 @@
 #include <random>
 using namespace std;
 
+/** 
+ * @class Food 
+ * 
+ * @brief Distribution aléatoire d'une pomme sur la grille
+ * 
+ * faire apparaitre de façon aléatoire sur la grille une pomme et des qu'elle est mangé, faire apparaitre une nouvelle
+*/
+
 
 class Food {
-    /*
-    * faire apparaitre de façon aléatoire sur la grille une pomme et des qu'elle est mangé, faire apparaitre une nouvelle
-    */
 
     private : 
-    std::pair<int,int> food; /* coordonées de la nouriture */
+    std::pair<int,int> food; /*!< coordonées de la nouriture */
     
     public: 
 
-    /*constructeur */
+    /**
+     * @fn 
+     * 
+     * @param 
+     */
     Food(std::pair<int,int> a = {0,0}); 
 
     /* accesseur */
