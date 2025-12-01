@@ -1,4 +1,6 @@
-#include "board.h"
+#include "../include/board.h"
+#include "../include/snake.h"
+#include "../include/food.h"
 
 Board::Board(int a, int b) : length(a) , width(b) {}
 
@@ -22,6 +24,13 @@ void Board::show_board(){
         }
         cout << "|" ;
         cout << endl;
-    };
+    }
+}
+
+void Board::add_snake(Snake snake){
 
 }
+void Board::add_food(Food food, Snake snake){
+
+}
+

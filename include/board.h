@@ -1,11 +1,14 @@
-#ifndef FOOD_H
-#define FOOD_H
+#ifndef BOARD_H
+#define BOARD_H
 
 
 #include <iostream>
 #include <random>
 using namespace std;
 
+
+class Food; 
+class Snake; 
 
 class Board {
     private:
@@ -25,10 +28,10 @@ class Board {
     void show_board();
 
     // ajoute snake sur le plateau 
-    void add_snake();
+    void add_snake(Snake snake);
 
     //ajoute food sur le plateau 
-    void add_food();
+    void add_food(Food food, Snake snake);
 
 };
 

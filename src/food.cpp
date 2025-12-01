@@ -9,7 +9,7 @@ std::pair<int,int> Food::get_food() const{
     return food;
 }
 
-std::pair<int,int> Food::generate_food(Snake snake){
+std::pair<int,int> Food::generate_food(const Snake& snake){
     std :: mt19937 gen(42); 
     // valeurs à modifier
     int a = 30; 
@@ -42,7 +42,7 @@ std::pair<int,int> Food::generate_food(Snake snake){
 }
 
 
-std::pair<int,int> Food::new_food(Snake snake){
+std::pair<int,int> Food::new_food(const Snake& snake){
     food = generate_food(snake);
     // std::vector<std::pair<int,int>> corps = snake.get_snake(); 
     // if (food == corps.front()){
