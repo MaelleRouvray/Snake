@@ -6,6 +6,8 @@
 #include <random>
 using namespace std;
 
+class Snake; 
+
 
 class Food {
     /*
@@ -24,10 +26,10 @@ class Food {
     std::pair<int,int> get_food() const;
 
     /*génère les coordonnées de la nouriture*/
-    std::pair<int,int> generate_food(const Snake snake); 
+    std::pair<int,int> generate_food(const Snake& snake); 
 
     /*nouvelle nouriture*/
-    std::pair<int,int> new_food(const Snake snake); 
+    std::pair<int,int> new_food(const Snake& snake); 
 
 };
 
