@@ -1,6 +1,6 @@
-#include "../include/board.h"
-#include "../include/snake.h"
-#include "../include/food.h"
+#include "board.h"
+#include "snake.h"
+#include "food.h"
 
 Board::Board(int a, int b) : length(a) , width(b) {}
 
