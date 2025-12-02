@@ -4,9 +4,11 @@
 
 #include <iostream>
 #include <random>
+#include "snake.h"
+
 using namespace std;
 
-<<<<<<< HEAD
+
 /** 
  * @class Food 
  * 
@@ -14,11 +16,6 @@ using namespace std;
  * 
  * faire apparaitre de façon aléatoire sur la grille une pomme et des qu'elle est mangé, faire apparaitre une nouvelle
 */
-=======
-class Snake; 
->>>>>>> develop-coline
-
-
 class Food {
 
     private : 

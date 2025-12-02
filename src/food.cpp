@@ -3,6 +3,8 @@
 #include "snake.h"
 
 
+std :: mt19937 gen(42);
+
 Food::Food(std::pair<int, int> a) : food(a) {}
 
 std::pair<int,int> Food::get_food() const{
@@ -10,12 +12,12 @@ std::pair<int,int> Food::get_food() const{
 }
 
 std::pair<int,int> Food::generate_food(const Snake& snake){
-    std :: mt19937 gen(42); 
-    // valeurs à modifier
-    int a = 30; 
-    int b = 20; /* taille du plateau */
-    std::uniform_int_distribution<int> distX(0,a); 
-    std::uniform_int_distribution<int> distY(0,b); 
+
+    int width = 10; 
+    int length =10; 
+     
+    std::uniform_int_distribution<int> distX(0,width -1); 
+    std::uniform_int_distribution<int> distY(0,length -1); 
 
     int x = distX(gen);
     int y = distY(gen);
