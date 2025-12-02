@@ -2,36 +2,55 @@
 #define BOARD_H
 
 
+#include "snake.h"
+#include "food.h"
+
+#include <array>
+#include <utility>
 #include <iostream>
 #include <random>
 using namespace std;
 
 
-class Food; 
-class Snake; 
+constexpr int N = 10; 
+constexpr int M = 10; 
 
 class Board {
     private:
     int length;
     int width;
 
+    // Enum pour les éléments
+    enum class Element { ETOILE, SERPENT, TETE, VIDE };
+
+    // Caractères associés aux éléments
+    const char cb = '.';       // case vide
+    const char cn = 'o';       // corps du serpent
+    const char x = '*';        // étoile
+    const char triangle = '^'; // tête du serpent
+
+    using Plateau = std::array<std::array<Element, M>, N>;
+    Plateau plateau; 
+
+    char get_char_from_element(Element element) const; 
+
 
     public:
     // constructeur
-    Board(int a=0, int b=0); 
+    Board(); 
+
+
+    //methodes: 
+    void initialisation_plateau(); 
+
+    void affiche_plateau() const; 
+
+
+    void dessine_snake(const Snake& snake);
     
-    // accesseur
-    int get_length();
-    int get_width();
-
-    // affiche_plateau vide 
-    void show_board();
-
-    // ajoute snake sur le plateau 
-    void add_snake(Snake snake);
-
-    //ajoute food sur le plateau 
-    void add_food(Food food, Snake snake);
+    
+    void dessine_food(const Food& food); 
+    
 
 };
 
