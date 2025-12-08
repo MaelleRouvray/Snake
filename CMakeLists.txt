@@ -9,6 +9,17 @@ file(GLOB SOURCES src/*.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
+set(Catch2_DIR "C:/Users/maell/Libraries/Catch2/lib/cmake/Catch2")
+find_package(Catch2 3 REQUIRED)
+
+add_executable(snake_tests
+    tests/test.cpp
+    src/snake.cpp
+    src/board.cpp
+    src/food.cpp)
+
+target_link_libraries(snake_tests PRIVATE Catch2::Catch2WithMain)
 
 
-
+enable_testing()
+add_test(NAME SnakeTests COMMAND snake_tests)
