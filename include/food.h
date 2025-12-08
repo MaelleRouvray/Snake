@@ -19,25 +19,50 @@ using namespace std;
 class Food {
 
     private : 
-    std::pair<int,int> food; /*!< coordonées de la nouriture */
+    pair<int,int> food; /*!< coordonées de la nouriture */
     
     public: 
 
     /**
-     * @fn 
+     * @fn Food(std::pair<int,int> a = {0,0})
+     * @brief Constructeur pas defaut de la classe Food
      * 
-     * @param 
+     * Initialise les coordonées de la nourriture (par défaut a {0,0})
+     * 
+     * @param a une paire d'entier représentant les coordonnées de la nouriture 
+     * @return coordonnée de la nourriture 
      */
-    Food(std::pair<int,int> a = {0,0}); 
+    Food(pair<int,int> a = {0,0}); 
 
-    /* accesseur */
-    std::pair<int,int> get_food() const;
 
-    /*génère les coordonnées de la nouriture*/
-    std::pair<int,int> generate_food(const Snake& snake); 
 
-    /*nouvelle nouriture*/
-    std::pair<int,int> new_food(const Snake& snake); 
+    /**
+     * @fn pair<int,int> get_food() const
+     * @brief Accéder à la nourriture 
+     * 
+     * @return pair<int,int> les coordonnées de la nourriture 
+     */
+    pair<int,int> get_food() const;
+
+
+
+    /**
+     * @fn pair<int,int> generate_food(const Snake& snake)
+     * @brief génère une nourriture 
+     * 
+     * @param snake corps du serpent 
+     * @return pair<int,int> coordonées de la nourriture 
+     */
+    pair<int,int> generate_food(const Snake& snake); 
+
+    /**
+     * @fn pair<int,int> new_food(const Snake& snake)
+     * @brief génère une nouvelle nouriture lorsque l'autre a été mangé 
+     * 
+     * @param snake corps du serpent 
+     * @return pair<int,int> coordonnées de la nouvelle nourriture 
+     */
+    pair<int,int> new_food(const Snake& snake); 
 
 };
 
