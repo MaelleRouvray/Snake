@@ -1,36 +1,54 @@
-#include "../include/board.h"
-#include "../include/snake.h"
-#include "../include/food.h"
+#include "board.h"
+#include "snake.h"
+#include "food.h"
 
-Board::Board(int a, int b) : length(a) , width(b) {}
-
-int Board::get_length(){
-    return length;
+//constructeur
+Board::Board()  {
+    initialisation_plateau(); 
 }
 
-int Board::get_width(){
-    return width;
-}
 
-void Board::show_board(){
-    for (int i=0;i<width;i++){
-        cout << " ___" ;
-    };
-    cout << endl ;
-    for (int i=0 ; i<length ; i++){
-        for (int j=0 ; j<width ; j++){
-            cout << "|" ;
-            cout << "___" ;
-        }
-        cout << "|" ;
-        cout << endl;
+char Board::get_char_from_element(Element element) const{
+    switch (element) {
+        case Element::VIDE: return cb; 
+        case Element::SERPENT: return cn; 
+        case Element::ETOILE: return x; 
+        case Element::TETE: return triangle; 
     }
 }
 
-void Board::add_snake(Snake snake){
-
+void Board::initialisation_plateau(){
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < M; ++j) {
+            plateau[i][j] = Element::VIDE;
+        }
+    }
 }
-void Board::add_food(Food food, Snake snake){
 
+
+void Board::affiche_plateau() const {
+    for (int i = 0; i < N; ++i) {
+        for (int j = 0; j < M; ++j) {
+            cout << get_char_from_element(plateau[i][j]); 
+        }
+        std::cout << "\n";
+    }
+    std::cout << "\n";
 }
 
+
+void Board::dessine_snake(const Snake& snake){
+    const auto& corps = snake.get_snake();
+    if (!corps.empty()) {
+        plateau[corps.front().second][corps.front().first] = Element::TETE; // tête
+        for (size_t i = 1; i < corps.size(); ++i) {
+            plateau[corps[i].second][corps[i].first] = Element::SERPENT; // corps
+        }
+    }
+}
+
+
+void Board::dessine_food(const Food& food){
+    auto pos = food.get_food(); 
+    plateau[pos.second][pos.first] = Element::ETOILE; 
+}
