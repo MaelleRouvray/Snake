@@ -12,9 +12,13 @@
 using namespace std;
 
 
-/** @brief hauteur du plateau */
+/** 
+ * @brief hauteur du plateau 
+ */
 constexpr int N = 10; 
-/** @brief largeur du plateau */
+/** 
+ * @brief largeur du plateau 
+ */
 constexpr int M = 10; 
 
 /** 
@@ -31,9 +35,11 @@ class Board {
 
 
 
-    /** @brief énumère les différents éléments qui peuvent être trouvé sur le plateau */
+    /** 
+     * @brief énumère les différents éléments qui peuvent être trouvé sur le plateau 
+     */
     enum class Element { 
-        ETOILE,     /*!< représente la nourriture */
+        FOOD,     /*!< représente la nourriture */
         SERPENT,    /*!< représente le corps du serpent */
         TETE,       /*!< représente la tête du serpent */
         VIDE        /*!< représente une case vide */
@@ -41,7 +47,9 @@ class Board {
 
 
 
-    /** @brief associe des charactères aux éléments du plateau */
+    /** 
+     * @brief associe des charactères aux éléments du plateau 
+     */
     const char cb = '.';       /*!< caractère pour la case vide */
     const char cn = 'o';       /*!< caractère pour lle corps du serpent */
     const char x = '*';        /*!< caractère pour la nourriture */
