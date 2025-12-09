@@ -1,5 +1,5 @@
 // #include <SFML/Graphics.hpp>
-//#include < C:/Users/maell/SFML-3.0.2-windows-gcc-14.2.0-mingw-64-bit/SFML-3.0.2/include/SFML/Graphics.hpp>
+// #include <C:/Users/maell/SFML-3.0.2-windows-gcc-14.2.0-mingw-64-bit/SFML-3.0.2/include/SFML/Graphics.hpp>
 
 #include <iostream>
 
@@ -10,7 +10,6 @@ using namespace std;
 
 
 int main() {
-
 
     Board board; 
 
