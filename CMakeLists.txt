@@ -15,7 +15,7 @@ file(GLOB SOURCES src/*.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-set(Catch2_DIR "C:/Users/maell/Libraries/Catch2/lib/cmake/Catch2")
+set(Catch2_DIR "C:/Users/Utilisateur/Desktop/fac/M2/S1/Catch2/lib/cmake/Catch2")
 find_package(Catch2 3 REQUIRED)
 
 add_executable(snake_tests

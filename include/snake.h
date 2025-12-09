@@ -1,3 +1,13 @@
+/**
+ *@file snake.h
+ *@brief classe snake
+ *@author maelle et coline 
+ *@version 0.1
+ */
+
+
+
+
 #ifndef SNAKE_H
 #define SNAKE_H
 
@@ -5,6 +15,8 @@
 #include <vector>
 #include <utility>
 using namespace std;
+
+
 
 /** 
  * @class Snake

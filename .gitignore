@@ -39,6 +39,14 @@ build/
 *.out
 *.app
 
+*.js 
+*.css
+*.svg
+*.sty
+*.tex
+*.bat
+*.html
+
 ##### VisualStudioCode
 .vscode/*
 !.vscode/settings.json
