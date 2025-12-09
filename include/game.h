@@ -14,9 +14,9 @@ using namespace std;
 
 
 
-void get_command(Snake snake);
+pair<int, int> get_command(Snake snake);
 bool collisions(Snake snake,Board board);
-void run(Snake snake);
+void run(Snake snake,Board board);
 
 
 #endif
