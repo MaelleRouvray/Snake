@@ -17,6 +17,15 @@ char Board::get_char_from_element(Element element) const{
     }
 }
 
+
+int Board::get_length(){
+    return length; 
+}
+
+int Board::get_width(){
+    return width; 
+}
+
 void Board::initialisation_plateau(){
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < M; ++j) {
