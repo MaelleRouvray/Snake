@@ -46,6 +46,8 @@ build/
 *.tex
 *.bat
 *.html
+*.cmake
+*.yaml
 
 ##### VisualStudioCode
 .vscode/*
