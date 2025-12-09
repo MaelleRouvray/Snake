@@ -82,6 +82,19 @@ class Board {
     Board(); 
 
 
+    /** 
+     *@fn int get_length()
+     *@brief accesseur de la longueur du plateau
+     */
+     int get_length(); 
+
+     /** 
+     *@fn int get_width()
+     *@brief accesseur de la largeur du plateau
+     */
+     int get_width(); 
+
+
     /**
      * @fn void initialisation_plateau()
      * @brief initialise le plateau avec des cases vides
