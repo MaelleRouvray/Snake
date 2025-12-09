@@ -48,7 +48,6 @@ build/
 *.html
 *.cmake
 *.yaml
-*.\CMakeFiles
 
 ##### VisualStudioCode
 .vscode/*
