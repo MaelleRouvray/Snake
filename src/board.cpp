@@ -12,7 +12,7 @@ char Board::get_char_from_element(Element element) const{
     switch (element) {
         case Element::VIDE: return cb; 
         case Element::SERPENT: return cn; 
-        case Element::ETOILE: return x; 
+        case Element::FOOD: return x; 
         case Element::TETE: return triangle; 
     }
 }
@@ -50,5 +50,5 @@ void Board::dessine_snake(const Snake& snake){
 
 void Board::dessine_food(const Food& food){
     auto pos = food.get_food(); 
-    plateau[pos.second][pos.first] = Element::ETOILE; 
+    plateau[pos.second][pos.first] = Element::FOOD; 
 }
