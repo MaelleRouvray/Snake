@@ -8,14 +8,14 @@
 
 using namespace std;
 
-
-/** 
+/**
  * @class Food 
  * 
  * @brief Distribution aléatoire d'une pomme sur la grille
  * 
  * faire apparaitre de façon aléatoire sur la grille une pomme et des qu'elle est mangé, faire apparaitre une nouvelle
 */
+
 class Food {
 
     private : 

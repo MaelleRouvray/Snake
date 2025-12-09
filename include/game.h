@@ -7,8 +7,9 @@
 using namespace std;
 
 
-... game(Snake snake)
-
+void get_command(Snake snake);
+bool collisions(Snake snake,Board board);
+void run(Snake snake);
 
 
 #endif

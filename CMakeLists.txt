@@ -3,6 +3,12 @@ project(snakeProject)
 
 set(CMAKE_CXX_STANDARD 17)
 
+list(APPEND CMAKE_PREFIX_PATH "C:/Users/maell/local/Catch2")
+find_package(Catch2 3 REQUIRED)
+
+add_executable(test test.cpp)
+target_link_libraries(test PRIVATE Catch2::Catch2WithMain)
+
 include_directories(include)
 
 file(GLOB SOURCES src/*.cpp)
