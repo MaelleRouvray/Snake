@@ -12,14 +12,13 @@ using namespace std;
 int main() {
 
     Board board; 
+    board.initialisation_plateau();
 
     Snake snake (5,5);
 
     Food food; 
-    food.generate_food(snake);
+    food.new_food(snake);
 
-
-    board.initialisation_plateau();
 
     
     board.dessine_food(food); 
@@ -29,12 +28,16 @@ int main() {
     snake.set_direction(1,0); // vers la droite
     snake.deplace();
 
+    board.initialisation_plateau();
+    board.dessine_food(food);
     board.dessine_snake(snake);
     board.affiche_plateau();
 
     snake.set_direction(1,0); // vers la droite
     snake.deplace();
 
+    board.initialisation_plateau();
+    board.dessine_food(food);
     board.dessine_snake(snake);
     board.affiche_plateau();
 
