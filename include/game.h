@@ -13,9 +13,33 @@
 using namespace std;
 
 
-
+/**
+ * @fn pair<int, int> get_command(Snake snake)
+ * @brief attribut aux touches claviers des commandes 
+ *
+ * attribution d'une direction pour les lettre "k","l","m","o". 
+ * @param snake corps du serpent 
+ * @return direction: un couple désignant la direction du serpent. 
+ */
 pair<int, int> get_command(Snake snake);
+
+/**
+ * @fn bool collisions(Snake snake,Board board)
+ * @brief collision du snake sur lui-même ou sur le bord du plateau
+ * 
+ * @param snake corps du serpent 
+ * @param board plateau 
+ * @return true s'il y a collision, false sinon
+ */
 bool collisions(Snake snake,Board board);
+
+/**
+ * @fn void run(Snake snake,Board board);
+ * @brief partie de jeu 
+ * 
+ * @param snake corps du serpent 
+ * @param board plateau
+ */
 void run(Snake snake,Board board);
 
 
