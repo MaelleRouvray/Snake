@@ -16,8 +16,8 @@ int main() {
     Snake snake (5,5);
 
     Food food; 
-    food.generate_food(snake); 
- 
+    food.generate_food(snake);
+
 
     board.initialisation_plateau();
 

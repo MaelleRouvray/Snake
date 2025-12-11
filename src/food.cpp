@@ -20,8 +20,8 @@ pair<int,int> Food::generate_food(const Snake& snake){
     uniform_int_distribution<int> distX(0,width -1); 
     uniform_int_distribution<int> distY(0,length -1); 
 
-    int x = distX(gen);
-    int y = distY(gen);
+        int x = distX(gen);
+        int y = distY(gen);
     pair<int,int> food = {x,y}; 
 
     //verifie que la nouriture n'est pas sur le snake//
