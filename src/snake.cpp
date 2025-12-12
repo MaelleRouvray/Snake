@@ -36,7 +36,7 @@ void Snake::deplace(){
 //vérifie collision du snake sur lui meme
 bool Snake::collision(){
     std::pair<int,int> tete = corps.front();
-    for (size_t i=0;i < corps.size();i++){
+    for (size_t i=1;i < corps.size();i++){
         if (corps[i]==tete){
             return true;
         }

@@ -73,6 +73,7 @@ class Board {
 
 
     public:
+
     /**
      * @fn Board()
      * @brief constructeur de la classe Board
