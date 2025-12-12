@@ -20,11 +20,11 @@ pair<int, int> get_command(Snake snake){
         //droite
         direction = {1,0} ;
     }
-    else if (lettre == 'o'){
+    else if (lettre == 'l'){
         //haut
         direction = {0,1} ;
     }
-    else if (lettre == 'l'){
+    else if (lettre == 'o'){
         //bas
         direction = {0,-1} ;
     }
