@@ -25,7 +25,8 @@ int main() {
     board.dessine_snake(snake);
     board.affiche_plateau();
 
-    snake.set_direction(1,0); // vers la droite
+    snake.set_direction(-1,0); // vers la droite
+    snake.grandir();
     snake.deplace();
 
     board.initialisation_plateau();
@@ -33,8 +34,16 @@ int main() {
     board.dessine_snake(snake);
     board.affiche_plateau();
 
-    snake.set_direction(1,0); // vers la droite
+    snake.set_direction(0,-1); 
     snake.deplace();
+
+    board.initialisation_plateau();
+    board.dessine_food(food);
+    board.dessine_snake(snake);
+    board.affiche_plateau();
+
+    snake.set_direction(1,0); 
+    snake.deplace(); 
 
     board.initialisation_plateau();
     board.dessine_food(food);
