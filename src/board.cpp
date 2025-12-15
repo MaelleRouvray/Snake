@@ -3,7 +3,7 @@
 #include "food.h"
 
 //constructeur
-Board::Board()  {
+Board::Board() : length(N),width(M) {
     initialisation_plateau(); 
 }
 
