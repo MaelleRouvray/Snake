@@ -43,7 +43,11 @@ bool collisions(Snake snake, Board board){
 
     auto corps = snake.get_snake(); 
     std::pair<int,int> tete = corps.front();
-    if (0 <= tete.first <= board.get_length() && 0 <= tete.second <= board.get_width()){
+    int x = tete.first; 
+    int y = tete.second;
+    int largeur = board.get_width(); 
+    int longueur = board.get_length();
+    if (x < 0 || x >= largeur || y < 0 || y >= longueur){
         col_snake_sur_bord = true;
     }
 
