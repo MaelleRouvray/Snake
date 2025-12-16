@@ -58,10 +58,34 @@ bool collisions(Snake snake, Board board){
 }
 
 
-void run(Snake snake,Board board){
+// void run(Snake snake,Board board){
+//     bool collision = collisions(snake,board);
+//     //new_food()
+//     while (collision = false){
+//         pair<int,int> direction = get_command(snake);
+
+//         int x = direction.first ; 
+//         int y = direction.second ;
+//         snake.set_direction(x,y);
+
+//         snake.deplace();
+//         collision = collisions(snake,board);
+//         //si mange food -> grandir 
+//     }
+// }
+
+
+void run(Snake& snake,Board& board, Food& food){
+
+
+    board.initialisation_plateau();
+    board.dessine_food(food);
+    board.dessine_snake(snake);
+    board.affiche_plateau();
+
     bool collision = collisions(snake,board);
     //new_food()
-    while (collision = false){
+    while (collision == false){
         pair<int,int> direction = get_command(snake);
 
         int x = direction.first ; 
@@ -69,7 +93,28 @@ void run(Snake snake,Board board){
         snake.set_direction(x,y);
 
         snake.deplace();
+
+        auto corps = snake.get_snake(); 
+        std::pair<int,int> tete = corps.front();
+        int u = tete.first; 
+        int v = tete.second;
+        std::pair<int,int> pom = food.get_food();
+        int f = pom.first; 
+        int g = pom.second; 
+        if (u == f && v == g){
+            snake.grandir(); 
+            food.new_food(snake); 
+        }
+
         collision = collisions(snake,board);
-        //si mange food -> grandir 
+
+        if (collision == false) {
+            board.initialisation_plateau(); 
+            board.dessine_food(food);
+            board.dessine_snake(snake);
+            board.affiche_plateau();
+
+        }
     }
+    std::cout << "T'es trop nul ! "; 
 }
