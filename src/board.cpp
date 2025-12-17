@@ -13,7 +13,8 @@ char Board::get_char_from_element(Element element) const{
         case Element::VIDE: return cb; 
         case Element::SERPENT: return cn; 
         case Element::FOOD: return x; 
-        case Element::TETE: return triangle; 
+        case Element::TETE: return triangle;
+        default: return '?';  
     }
 }
 
