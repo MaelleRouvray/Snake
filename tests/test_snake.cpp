@@ -45,9 +45,99 @@
     }
  }
 
- TEST_CASE( "test de la méthode grandir()", "[grandir]"){
+ TEST_CASE( "Test de la croissance du serpent", "[grandir]"){
     Snake snake(5,10); 
     snake.grandir();
 
     REQUIRE(snake.get_grandit_apres() == true); 
+ }
+
+ TEST_CASE( "Test de la direction du serpent", "[direction]"){
+    Snake snake(5,10); 
+
+    SECTION( "Changement de direction simple"){
+        int x = -1; 
+        int y = 0; 
+        snake.set_direction(x,y); 
+
+        std::pair <int,int> gauche = {x,y}; 
+
+        REQUIRE(snake.get_direction() == gauche); 
+    }
+
+    SECTION( "Plusieurs changements de direction"){
+        snake.set_direction(1,0); 
+        std::pair<int,int> droite = {1,0}; 
+
+        REQUIRE(snake.get_direction() == droite); 
+        
+        snake.set_direction(0,1); 
+        std::pair<int,int> haut = {0,1}; 
+
+        REQUIRE(snake.get_direction() == haut); 
+
+        snake.set_direction(0,-1); 
+        std::pair<int,int> bas = {0,-1}; 
+
+        REQUIRE(snake.get_direction() == bas); 
+    }
+ }
+
+
+ TEST_CASE( "Test du deplacement du serpent", "[deplacement]"){
+    Snake snake(5,10); 
+
+    SECTION( "Pas de déplacement"){
+        snake.deplace(); 
+        auto corps = snake.get_snake(); 
+
+        REQUIRE(corps.size() == 1); 
+        REQUIRE(corps[0].first == 5); 
+        REQUIRE(corps[0].second == 10);
+    }
+    SECTION( "Déplacement sans croissance"){
+        snake.set_direction(1,0); 
+        snake.deplace(); 
+        auto corps = snake.get_snake(); 
+        
+        REQUIRE(corps.size() == 1); 
+        REQUIRE(corps[0].first == 6); 
+        REQUIRE(corps[0].second == 10); 
+    }
+
+    SECTION( "Déplacement avec croissance"){
+        snake.set_direction(0,1); 
+        snake.grandir(); 
+
+        REQUIRE(snake.get_grandit_apres() == true); 
+
+        snake.deplace(); 
+
+        auto corps = snake.get_snake(); 
+
+        REQUIRE(corps.size() == 2); 
+        REQUIRE(snake.get_grandit_apres() == false); 
+        REQUIRE(corps[0].first == 5); 
+        REQUIRE(corps[0].second == 11); 
+        REQUIRE(corps[1].first == 5); 
+        REQUIRE(corps[1].second == 10); 
+
+        snake.deplace(); 
+
+        auto new_corps = snake.get_snake(); 
+        
+        REQUIRE(new_corps.size() == 2); 
+        REQUIRE(snake.get_grandit_apres() == false); 
+        REQUIRE(new_corps[0].first == 5); 
+        REQUIRE(new_corps[0].second == 12); 
+        REQUIRE(new_corps[1].first == 5); 
+        REQUIRE(new_corps[1].second == 11); 
+
+    }
+ }
+
+ TEST_CASE( "Test de collision sur lui_même", "[collision]"){
+    Snake snake(5,10); 
+
+    REQUIRE(snake.collision() == false); 
  }
