@@ -57,6 +57,15 @@ class Snake {
 
 
     /**
+     * @fn const std::vector<std::pair<int,int>> get_snake() const
+     * @brief Accéder à la direction du snake
+     * 
+     * @return direction , la direction du snake
+     */
+    const std::pair<int,int> get_direction() const;
+
+
+    /**
      * @fn void grandir()
      * @brief Met le booléen grandit_apres à true 
      */
