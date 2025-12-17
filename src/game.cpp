@@ -46,8 +46,8 @@ bool collisions(Snake snake, Board board){
     int x = tete.first; 
     int y = tete.second;
     int largeur = board.get_width(); 
-    int longueur = board.get_length(); 
-    if (x<0 || x >= largeur || y < 0 || y >= longueur){
+    int longueur = board.get_length();
+    if (x < 0 || x >= largeur || y < 0 || y >= longueur){
         col_snake_sur_bord = true;
     }
 
@@ -56,6 +56,23 @@ bool collisions(Snake snake, Board board){
     }
     return false;
 }
+
+
+// void run(Snake snake,Board board){
+//     bool collision = collisions(snake,board);
+//     //new_food()
+//     while (collision = false){
+//         pair<int,int> direction = get_command(snake);
+
+//         int x = direction.first ; 
+//         int y = direction.second ;
+//         snake.set_direction(x,y);
+
+//         snake.deplace();
+//         collision = collisions(snake,board);
+//         //si mange food -> grandir 
+//     }
+// }
 
 
 void run(Snake& snake,Board& board, Food& food){
