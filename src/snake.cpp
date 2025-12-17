@@ -3,13 +3,18 @@
 // constructeur (on initialise avec la tete)
 Snake::Snake(int x, int y) {
     corps.push_back({x,y});
-    direction = {1,0};
+    direction = {0,0};
     grandit_apres = false;
 }
 
 // accéder au corps du snake
 const std::vector<std::pair<int,int>> Snake::get_snake() const{
     return corps;
+}
+
+// accéder à la direction
+const std::pair<int,int> Snake::get_direction() const{
+    return direction;
 }
 
 void Snake::grandir(){
@@ -23,6 +28,9 @@ void Snake::set_direction(int dx,int dy){
 
 // déplacement du Snake
 void Snake::deplace(){
+    if (direction.first == 0 && direction.second == 0) {
+        return; // ne bouge pas tant qu'aucune direction n'est donnée
+    }
     std::pair<int,int> new_tete = {corps.front().first + direction.first,corps.front().second + direction.second};
     corps.insert(corps.begin(),new_tete);
     if (grandit_apres){
