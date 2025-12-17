@@ -51,7 +51,7 @@ class Snake {
      * @fn const std::vector<std::pair<int,int>> get_snake() const
      * @brief Accéder au corps du snake
      * 
-     * @return corps , le corps du snake consitué de ses corrdonnées
+     * @return corps, le corps du snake consitué de ses corrdonnées
      */
     const std::vector<std::pair<int,int>> get_snake() const;
 
@@ -60,16 +60,26 @@ class Snake {
      * @fn const std::vector<std::pair<int,int>> get_snake() const
      * @brief Accéder à la direction du snake
      * 
-     * @return direction , la direction du snake
+     * @return direction, la direction du snake
      */
     const std::pair<int,int> get_direction() const;
 
 
+ 
     /**
      * @fn void grandir()
      * @brief Met le booléen grandit_apres à true 
      */
     void grandir();
+
+    
+    /**
+     * @fn bool get_grandit_apres() const;
+     * @brief accéder au booléen grandit_après 
+     *
+     * @return true si le serpent doit grandir , false sinon
+     */
+    bool get_grandit_apres() const;
 
 
     /**

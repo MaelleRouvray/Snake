@@ -21,6 +21,10 @@ void Snake::grandir(){
     grandit_apres = true ;
 }
 
+bool Snake::get_grandit_apres() const{
+    return grandit_apres; 
+}
+
 // nouvelle direction
 void Snake::set_direction(int dx,int dy){
     direction ={dx,dy};
