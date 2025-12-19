@@ -39,7 +39,7 @@ bool collisions(Snake snake,Board board);
  * 
  * @param snake corps du serpent 
  * @param board plateau
- * @param food nourriture
+ * @param food nourriture 
  */
 void run(Snake& snake,Board& board, Food& food);
 

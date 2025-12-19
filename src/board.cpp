@@ -37,6 +37,7 @@ void Board::initialisation_plateau(){
 
 
 void Board::affiche_plateau() const {
+    // system("cls"); pour afficher sur le même plateau tout le jeu 
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < M; ++j) {
             cout << get_char_from_element(plateau[i][j]); 
