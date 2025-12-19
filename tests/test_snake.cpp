@@ -139,5 +139,33 @@
  TEST_CASE( "Test de collision sur lui_même", "[collision]"){
     Snake snake(5,10); 
 
-    REQUIRE(snake.collision() == false); 
+    SECTION( "Pas de collision"){
+        REQUIRE(snake.collision() == false); 
+    }
+
+    SECTION( "Collision sur son propre corps"){
+        snake.set_direction(1,0); // vers la droite 
+        snake.grandir(); 
+        snake.deplace(); 
+
+        snake.grandir(); 
+        snake.deplace(); 
+
+        snake.grandir();
+        snake.deplace(); 
+
+        snake.grandir();
+        snake.deplace(); 
+        
+        snake.set_direction(0,-1); // vers le haut
+        snake.deplace(); 
+
+        snake.set_direction(-1,0); //vers la gauche
+        snake.deplace(); 
+
+        snake.set_direction(0,1); //vers le bas 
+        snake.deplace(); 
+
+        REQUIRE(snake.collision() == true); 
+    }
  }
