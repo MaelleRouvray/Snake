@@ -19,11 +19,11 @@ char Board::get_char_from_element(Element element) const{
 }
 
 
-int Board::get_length(){
+int Board::get_length() const{
     return length; 
 }
 
-int Board::get_width(){
+int Board::get_width() const{
     return width; 
 }
 

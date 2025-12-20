@@ -103,7 +103,7 @@ void run(Snake& snake,Board& board, Food& food){
         int g = pom.second; 
         if (u == f && v == g){
             snake.grandir(); 
-            food.new_food(snake); 
+            food.new_food(snake, board); 
         }
 
         collision = collisions(snake,board);

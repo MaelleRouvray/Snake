@@ -15,11 +15,11 @@ using namespace std;
 /** 
  * @brief hauteur du plateau 
  */
-constexpr int N = 20; 
+constexpr int N = 15; 
 /** 
  * @brief largeur du plateau 
  */
-constexpr int M = 15; 
+constexpr int M = 20; 
 
 /** 
  * @class Board 
@@ -87,13 +87,13 @@ class Board {
      *@fn int get_length()
      *@brief accesseur de la longueur du plateau
      */
-     int get_length(); 
+     int get_length() const; 
 
      /** 
      *@fn int get_width()
      *@brief accesseur de la largeur du plateau
      */
-     int get_width(); 
+     int get_width() const; 
 
 
     /**

@@ -4,7 +4,11 @@
 
 #include <iostream>
 #include <random>
-#include "snake.h"
+// #include "snake.h"
+// #include "board.h"
+
+class Board; 
+class Snake; 
 
 using namespace std;
 
@@ -53,7 +57,7 @@ class Food {
      * @param snake corps du serpent 
      * @return pair<int,int> coordonées de la nourriture 
      */
-    pair<int,int> generate_food(const Snake& snake); 
+    pair<int,int> generate_food(const Snake& snake, const Board& board); 
 
     /**
      * @fn pair<int,int> new_food(const Snake& snake)
@@ -62,7 +66,7 @@ class Food {
      * @param snake corps du serpent 
      * @return pair<int,int> coordonnées de la nouvelle nourriture 
      */
-    pair<int,int> new_food(const Snake& snake); 
+    pair<int,int> new_food(const Snake& snake, const Board& board); 
 
 };
 
