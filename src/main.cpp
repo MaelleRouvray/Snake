@@ -1,58 +1,3 @@
-// #include <SFML/Graphics.hpp>
-// #include <C:/Users/maell/SFML-3.0.2-windows-gcc-14.2.0-mingw-64-bit/SFML-3.0.2/include/SFML/Graphics.hpp>
-
-
-///////////////////////
-///INUTILE ?         //
-///////////////////////
-
-// #include <iostream>
-
-// #include "snake.h"
-// #include "food.h"
-// #include "board.h"
-// using namespace std; 
-
-
-// int main() {
-
-//     Board board; 
-//     board.initialisation_plateau();
-
-//     Snake snake (5,5);
-
-//     Food food; 
-//     food.new_food(snake);
-
-
-    
-//     board.dessine_food(food); 
-//     board.dessine_snake(snake);
-//     board.affiche_plateau();
-
-//     snake.set_direction(1,0); // vers la droite
-//     snake.deplace();
-
-//     board.initialisation_plateau();
-//     board.dessine_food(food);
-//     board.dessine_snake(snake);
-//     board.affiche_plateau();
-
-//     snake.set_direction(1,0); // vers la droite
-//     snake.deplace();
-
-//     board.initialisation_plateau();
-//     board.dessine_food(food);
-//     board.dessine_snake(snake);
-//     board.affiche_plateau();
-
-
-//     return 0;
-// }
-
-
-
-
 ////////////////////////
 /// SANS SFML        ///
 ////////////////////////
@@ -85,6 +30,12 @@
 // }
 
 
+
+////////////////////////
+/// AVEC SFML        ///
+////////////////////////
+
+
 #include <SFML/Graphics.hpp>
 #include "snake.h"
 #include "food.h"
@@ -93,8 +44,7 @@
 using namespace std; 
 
 int main(){
-    //sf::RenderWindow window (sf::VideoMode({800,600}), "Snake avec SFML");  // grille 40x30
-    sf::RenderWindow window (sf::VideoMode({400,300}), "Snake avec SFML"); // grille 20x15
+    sf::RenderWindow window (sf::VideoMode({800,600}), "Snake avec SFML");  // grille 20x15
     window.setFramerateLimit(60);
     sf::Clock clock ;
     float delay = 0.2f ;  // bouge toutes les 0.2s
@@ -102,7 +52,12 @@ int main(){
     sf::Font font("Fonts/arial.ttf") ;
     sf::Text gameoverText(font) ;
     gameoverText.setString("Game Over");
-    gameoverText.setCharacterSize(24);
+    gameoverText.setCharacterSize(36);
+    gameoverText.setPosition(sf::Vector2f(7*40,6*40));
+
+    int score = 0 ;
+    sf::Text scoreText(font);
+    scoreText.setCharacterSize(24);
     
 
     Snake snake(10,7);
@@ -112,6 +67,7 @@ int main(){
 
     bool debut = false ;
     bool collision = false ;
+  
     
     while (window.isOpen()){
         while (auto event = window.pollEvent()) {
@@ -161,8 +117,8 @@ int main(){
             if(tete == coord_food){     // si serpent mange nourriture alors grandir puis new food
                 snake.grandir();
                 food.new_food(snake);
+                score += 1;
             }
-            cout << collision ;
         }
 
 
@@ -173,8 +129,8 @@ int main(){
             // dessin serpent
             auto corps = snake.get_snake() ;
             for (size_t i = 0;i < corps.size(); i++){
-                sf::RectangleShape rect(sf::Vector2f(20, 20)); //taille d'uen case
-                rect.setPosition(sf::Vector2f(static_cast<float>(corps[i].first * 20), static_cast<float>(corps[i].second * 20)));
+                sf::RectangleShape rect(sf::Vector2f(40, 40)); //taille d'uen case
+                rect.setPosition(sf::Vector2f(corps[i].first * 40, corps[i].second * 40));
                 if (i == 0){
                     rect.setFillColor(sf::Color::Yellow) ; // tete du serpent
                 }
@@ -186,15 +142,20 @@ int main(){
 
             // dessin food
             auto coord_food = food.get_food();
-            sf::CircleShape food_circle(10.f);
-            food_circle.setPosition(sf::Vector2f(static_cast<float>(coord_food.first*20), static_cast<float>(coord_food.second*20)));
+            sf::CircleShape food_circle(20.f);
+            food_circle.setPosition(sf::Vector2f(coord_food.first*40, coord_food.second*40));
             food_circle.setFillColor(sf::Color::Red);
             window.draw(food_circle);
+
+            scoreText.setString("Score : " + to_string(score));
+            window.draw(scoreText);
         
         }
 
         else {
             window.draw(gameoverText);
+            scoreText.setPosition(sf::Vector2f(8*40,8*40)) ; 
+            window.draw(scoreText);
         }
 
         window.display();
