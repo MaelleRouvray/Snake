@@ -64,6 +64,8 @@ int main(){
     Food food ;
     Board board ;
 
+    food.new_food(snake, board); 
+
 
     bool debut = false ;
     bool collision = false ;
@@ -116,7 +118,7 @@ int main(){
 
             if(tete == coord_food){     // si serpent mange nourriture alors grandir puis new food
                 snake.grandir();
-                food.new_food(snake);
+                food.new_food(snake, board);
                 score += 1;
             }
         }
