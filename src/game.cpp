@@ -20,11 +20,11 @@ pair<int, int> get_command(Snake snake){
         //droite
         direction = {1,0} ;
     }
-    else if (lettre == 'o'){
+    else if (lettre == 'l'){
         //haut
         direction = {0,-1} ;
     }
-    else if (lettre == 'l'){
+    else if (lettre == 'o'){
         //bas
         direction = {0,1} ;
     }
@@ -52,7 +52,7 @@ bool collisions(Snake snake, Board board){
     }
 
     if (col_snake_sur_snake || col_snake_sur_bord){
-        return true;
+        return true;   
     }
     return false;
 }

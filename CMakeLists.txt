@@ -26,7 +26,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE SFML::Graphics)
 find_package(Catch2 3 REQUIRED)
 
 add_executable(snake_tests
-    tests/test.cpp
+    tests/test_snake.cpp 
     src/snake.cpp
     src/board.cpp
     src/food.cpp)
