@@ -15,11 +15,11 @@ using namespace std;
 /** 
  * @brief hauteur du plateau 
  */
-constexpr int N = 10; 
+constexpr int N = 20; 
 /** 
  * @brief largeur du plateau 
  */
-constexpr int M = 10; 
+constexpr int M = 15; 
 
 /** 
  * @class Board 
