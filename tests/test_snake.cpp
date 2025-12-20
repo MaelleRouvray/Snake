@@ -5,13 +5,12 @@
 
 
 /**
- * @brief test de Snake::Snake(int x, int y) 
- * Test le constructeur de la classe Snake
+ * @test Snake::Snake(int x, int y) 
+ * @brief Test le constructeur de la classe Snake
  * Vérifie l'initialisation du serpent, 
  * que la direction par default soit bien (0,0)
  * et que le booléen grandit_après soit faux 
  */
-
  TEST_CASE( "Constructeur du snake", "[snake]"){
     int x = 5; 
     int y = 10; 
@@ -45,6 +44,12 @@
     }
  }
 
+
+/**
+ * @test void Snake::grandir()
+ * @brief Test la methode de croissance du serpent 
+ * * Verifie que le booléen grandit_après est true après l'appel 
+ */
  TEST_CASE( "Test de la croissance du serpent", "[grandir]"){
     Snake snake(5,10); 
     snake.grandir();
@@ -52,6 +57,13 @@
     REQUIRE(snake.get_grandit_apres() == true); 
  }
 
+/**
+ *@test void Snake::set_direction(int dx,int dy)
+ * @brief Test de la direction du serpent 
+ * *Vérifie que la direction est bien implémenter après: 
+ * un changement de direction simple 
+ * et plusieurs changements de directions
+ */
  TEST_CASE( "Test de la direction du serpent", "[direction]"){
     Snake snake(5,10); 
 
@@ -83,7 +95,11 @@
     }
  }
 
-
+/**
+ * @test void Snake::deplace()
+ * @brief Test du bon déplacement du serpent 
+ * *Vérifie que le déplacement du serpent se fait correctement avec et sans croissance de ce dernier 
+ */
  TEST_CASE( "Test du deplacement du serpent", "[deplacement]"){
     Snake snake(5,10); 
 
@@ -136,6 +152,12 @@
     }
  }
 
+
+ /**
+  * @test bool Snake::collision()
+  * @brief Test des collisions du seprent sur lui-même 
+  * *Vérifie pour une collision simple et aussi en demi-tour 
+  */
  TEST_CASE( "Test de collision sur lui_même", "[collision]"){
     Snake snake(5,10); 
 
@@ -167,5 +189,19 @@
         snake.deplace(); 
 
         REQUIRE(snake.collision() == true); 
+    }
+
+    SECTION( "collision sur son propre corps en demi-tour"){
+        snake.set_direction(1,0); // vers la droite 
+        snake.grandir(); 
+        snake.deplace(); 
+
+        snake.grandir(); 
+        snake.deplace(); 
+        
+        snake.set_direction(-1,0); 
+        snake.deplace(); 
+
+        REQUIRE(snake.collision()==true);
     }
  }
