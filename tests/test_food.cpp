@@ -18,7 +18,7 @@
         REQUIRE(food.get_food().second == 0); 
     }
 
-    SECTION( "stckage des nouvelles coordonnées"){
+    SECTION( "stockage des nouvelles coordonnées"){
 
         std::pair<int,int> pos = {10,7}; 
         Food new_food(pos); 
