@@ -103,6 +103,8 @@ class Board {
     void initialisation_plateau(); 
 
 
+
+
     /**
      * @fn void affiche_plateau() const
      * @brief affiche le plateau de jeu 
@@ -129,6 +131,50 @@ class Board {
     void dessine_food(const Food& food); 
     
 
+
+    /**
+     * @fn bool case_vide(int i, int j) const
+     * @brief Vérifie si la case donnée est vide 
+     * 
+     * @param i indice de la ligne 
+     * @param j indice de la colonne
+     * @return true si la case à la ième ligne et jème colonne est vide, false sinon
+     */
+     bool case_vide(int i, int j) const; 
+
+
+     /**
+      * @fn bool case_snake(int i, int j) const
+      * @brief Vérifie si la case donnée est occupée par le corps du serpent 
+      *
+      * @param i indice de la ligne 
+      * @param j indice de la colonne 
+      * @return true si cette case contient le corps du serpent, false sinon
+      */
+      bool case_snake(int i, int j) const; 
+
+
+      /**
+       * @fn bool case_tete(int i, int j) const
+       * @brief Vérifie si la case donnée est occupée par la tête du serpent 
+       * 
+       * @param i indice de la ligne 
+       * @param j indice de la colonne 
+       * @return true si cette case contient la tête du serpent, false sinon
+       */
+       bool case_tete(int i, int j) const; 
+
+
+
+      /**
+       * @fn bool case_food(int i, int j) const
+       * @brief Vérifie si la case donnée est occupée par de la nourriture
+       *
+       * @param i indice de la ligne 
+       * @param j indeice de la colonne 
+       * @return true si cette case contient de la nourriture, false sinon 
+       */
+       bool case_food(int i, int j) const; 
 };
 
 

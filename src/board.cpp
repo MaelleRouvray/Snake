@@ -37,7 +37,6 @@ void Board::initialisation_plateau(){
 
 
 void Board::affiche_plateau() const {
-    // system("cls"); pour afficher sur le même plateau tout le jeu 
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < M; ++j) {
             cout << get_char_from_element(plateau[i][j]); 
@@ -62,4 +61,20 @@ void Board::dessine_snake(const Snake& snake){
 void Board::dessine_food(const Food& food){
     auto pos = food.get_food(); 
     plateau[pos.second][pos.first] = Element::FOOD; 
+}
+
+bool Board::case_vide(int i, int j) const{
+    return plateau[i][j] == Element::VIDE; 
+}
+
+bool Board::case_snake(int i, int j) const{
+    return plateau[i][j] == Element::SERPENT;
+}
+
+bool Board::case_tete(int i, int j) const{
+    return plateau[i][j] == Element::TETE; 
+}
+
+bool Board::case_food(int i, int j) const{
+    return plateau[i][j] == Element::FOOD;
 }
