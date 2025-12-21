@@ -27,6 +27,7 @@ find_package(Catch2 3 REQUIRED)
 
 add_executable(snake_tests
     tests/test_snake.cpp 
+    tests/test_food.cpp
     src/snake.cpp
     src/board.cpp
     src/food.cpp)

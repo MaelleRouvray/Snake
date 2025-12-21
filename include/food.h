@@ -29,7 +29,7 @@ class Food {
 
     /**
      * @fn Food(std::pair<int,int> a = {0,0})
-     * @brief Constructeur pas defaut de la classe Food
+     * @brief Constructeur par defaut de la classe Food
      * 
      * Initialise les coordonées de la nourriture (par défaut a {0,0})
      * 
