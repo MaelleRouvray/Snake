@@ -1,3 +1,14 @@
+/**
+ * @file board.h
+ * @brief Classe Board
+ * @author Maelle et Coline 
+ * @version 0.1 
+ */
+
+
+
+
+
 #ifndef BOARD_H
 #define BOARD_H
 

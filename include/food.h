@@ -1,3 +1,12 @@
+/**
+ * @file food.h
+ * @brief Classe Food
+ * @author Maelle et Coline
+ * @version 0.1 
+ */
+
+
+
 #ifndef FOOD_H
 #define FOOD_H
 

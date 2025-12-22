@@ -1,3 +1,12 @@
+/**
+ * @file game.h
+ * 
+ * @author Maelle et Coline 
+ * @version 0.1 
+ */
+
+
+
 #ifndef GAME_H
 #define GAME_H
 
