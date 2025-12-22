@@ -29,9 +29,11 @@ add_executable(snake_tests
     tests/test_snake.cpp 
     tests/test_food.cpp
     tests/test_board.cpp
+    tests/test_collision.cpp
     src/snake.cpp
     src/board.cpp
-    src/food.cpp)
+    src/food.cpp
+    src/game.cpp)
 
 target_link_libraries(snake_tests PRIVATE Catch2::Catch2WithMain)
 
