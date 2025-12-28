@@ -1,3 +1,10 @@
+/**
+ * @file test_collision.cpp
+ * @brief Tests des collisions du serpent durant la partie de jeu 
+ * @author Maelle et Coline 
+ */
+
+
 
 #include <catch2/catch_test_macros.hpp>
 #include "game.h"

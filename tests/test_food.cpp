@@ -1,3 +1,12 @@
+/**
+ * @file test_food.cpp
+ * @brief Tests de la classe Food
+ * @author Maelle et Coline 
+ */
+
+
+
+
 #include <catch2/catch_test_macros.hpp>
 #include "food.h"
 #include "snake.h"

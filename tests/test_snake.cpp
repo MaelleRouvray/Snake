@@ -1,3 +1,8 @@
+/**
+ * @file test_snake.cpp
+ * @brief Tests de la classe Snake
+ * @author Maelle et Coline 
+ */
 
 
 #include <catch2/catch_test_macros.hpp>
