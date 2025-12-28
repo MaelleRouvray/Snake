@@ -25,12 +25,11 @@ pair<int,int> Food::generate_food(const Snake& snake, const Board& board){
     uniform_int_distribution<int> distX(0,width); 
     uniform_int_distribution<int> distY(0,length); 
 
-        // int x = distX(gen);
-        // int y = distY(gen);
+
     pair<int,int> new_food; 
     bool collision = true; 
 
-    //verifie que la nouriture n'est pas sur le snake/
+    /*verifie que la nouriture n'est pas sur le snake*/
     while (collision){
 
         new_food.first = distX(gen);

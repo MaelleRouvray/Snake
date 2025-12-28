@@ -13,8 +13,7 @@
 
 #include <iostream>
 #include <random>
-// #include "snake.h"
-// #include "board.h"
+
 
 class Board; 
 class Snake; 

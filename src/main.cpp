@@ -44,10 +44,10 @@
 using namespace std; 
 
 int main(){
-    sf::RenderWindow window (sf::VideoMode({800,600}), "Snake avec SFML");  // grille 20x15
+    sf::RenderWindow window (sf::VideoMode({800,600}), "Snake avec SFML");  /*grille 20x15*/
     window.setFramerateLimit(60);
     sf::Clock clock ;
-    float delay = 0.2f ;  // bouge toutes les 0.2s
+    float delay = 0.2f ;  /*bouge toutes les 0.2s*/
 
     sf::Font font("Fonts/arial.ttf") ;
     sf::Text gameoverText(font) ;
@@ -77,7 +77,7 @@ int main(){
                 window.close();
             }
 
-            //entrées clavier
+            /*entrées clavier*/
             
             if (!collision){
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Left)){
@@ -116,7 +116,7 @@ int main(){
             auto tete = corps.front();
             auto coord_food = food.get_food();
 
-            if(tete == coord_food){     // si serpent mange nourriture alors grandir puis new food
+            if(tete == coord_food){     /*si le serpent mange la nourriture alors il grandir puis new food*/
                 snake.grandir();
                 food.new_food(snake, board);
                 score += 1;
@@ -125,24 +125,24 @@ int main(){
 
 
 
-        // rendu graphique
+        /*rendu graphique*/
         window.clear(sf::Color::Black);
         if (!collision){
-            // dessin serpent
+            /*dessin du serpent*/
             auto corps = snake.get_snake() ;
             for (size_t i = 0;i < corps.size(); i++){
-                sf::RectangleShape rect(sf::Vector2f(40, 40)); //taille d'uen case
+                sf::RectangleShape rect(sf::Vector2f(40, 40)); /*taille d'une case*/
                 rect.setPosition(sf::Vector2f(corps[i].first * 40, corps[i].second * 40));
                 if (i == 0){
-                    rect.setFillColor(sf::Color::Yellow) ; // tete du serpent
+                    rect.setFillColor(sf::Color::Yellow) ; /*tete du serpent*/
                 }
                 else {
-                    rect.setFillColor(sf::Color::Green) ; // reste du corps
+                    rect.setFillColor(sf::Color::Green) ; /*reste du corps*/
                 }
                 window.draw(rect) ;
             }
 
-            // dessin food
+            /*dessin de la nourriture*/
             auto coord_food = food.get_food();
             sf::CircleShape food_circle(20.f);
             food_circle.setPosition(sf::Vector2f(coord_food.first*40, coord_food.second*40));

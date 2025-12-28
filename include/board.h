@@ -50,7 +50,7 @@ class Board {
      * @brief énumère les différents éléments qui peuvent être trouvé sur le plateau 
      */
     enum class Element { 
-        FOOD,     /*!< représente la nourriture */
+        FOOD,       /*!< représente la nourriture */
         SERPENT,    /*!< représente le corps du serpent */
         TETE,       /*!< représente la tête du serpent */
         VIDE        /*!< représente une case vide */

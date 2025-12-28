@@ -13,19 +13,19 @@ pair<int, int> get_command(Snake snake){
     cout << "Choisir une direction avec une lettre parmi (k,o,l,m) ";
     cin >> lettre ;
     if (lettre == 'k'){
-        //gauche
+        /*gauche*/
         direction = {-1,0} ;
     }  
     else if (lettre == 'm'){
-        //droite
+        /*droite*/
         direction = {1,0} ;
     }
     else if (lettre == 'o'){
-        //haut
+        /*haut*/
         direction = {0,-1} ;
     }
     else if (lettre == 'l'){
-        //bas
+        /*bas*/
         direction = {0,1} ;
     }
     else {
@@ -36,7 +36,7 @@ pair<int, int> get_command(Snake snake){
     return direction; 
 }
 
-// collision du snake sur lui meme et avec le mur
+
 bool collisions(Snake snake, Board board){
     bool col_snake_sur_snake = snake.collision();
     bool col_snake_sur_bord = false;
@@ -58,22 +58,6 @@ bool collisions(Snake snake, Board board){
 }
 
 
-// void run(Snake snake,Board board){
-//     bool collision = collisions(snake,board);
-//     //new_food()
-//     while (collision = false){
-//         pair<int,int> direction = get_command(snake);
-
-//         int x = direction.first ; 
-//         int y = direction.second ;
-//         snake.set_direction(x,y);
-
-//         snake.deplace();
-//         collision = collisions(snake,board);
-//         //si mange food -> grandir 
-//     }
-// }
-
 
 void run(Snake& snake,Board& board, Food& food){
 
@@ -84,7 +68,6 @@ void run(Snake& snake,Board& board, Food& food){
     board.affiche_plateau();
 
     bool collision = collisions(snake,board);
-    //new_food()
     while (collision == false){
         pair<int,int> direction = get_command(snake);
 
@@ -116,5 +99,5 @@ void run(Snake& snake,Board& board, Food& food){
 
         }
     }
-    std::cout << "T'es trop nul ! "; 
+    std::cout << "Game over ! "; 
 }

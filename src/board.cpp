@@ -2,7 +2,7 @@
 #include "snake.h"
 #include "food.h"
 
-//constructeur
+
 Board::Board() : length(N),width(M) {
     initialisation_plateau(); 
 }
