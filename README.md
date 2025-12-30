@@ -3,6 +3,7 @@
 Ce projet a pour objectif d'implémenter le jeu Snake qui consiste à manger des pommes présentes sur le plateau afin de grandir tout en évitant une collision contre le mur ou sur soi-même.
 
 ### Structure du projet 
+Voici la structure du projet, décomoosée en différents dossiers et fichiers.
 ```
 .
 ├── include
@@ -31,15 +32,15 @@ La documentation a été générée avec [doxygen](https://www.doxygen.nl/downlo
 ```
 doxygen doxygenfile
 ```
-pour l'ouvrir sous Windows, il faut taper la commande 
+pour l'ouvrir sous Windows, il faut se placer dans le dossier doc et taper la commande 
 ```
 start html/index.html
 ```
 
 ### Compilation 
-Le projet est compilé avec un Makefile généré par [CMake] (https://cmake.org/download/).  
+Le projet est compilé avec un Makefile généré par [CMake](https://cmake.org/download/).  
 Nous avons utilisé [Catch2](https://github.com/catchorg/Catch2.git) pour réaliser les tests sur notre code. 
-Nous avons également utilisé la librairie graphique SFML afin d'obtenir un rendu graphique optimal. Pour cela, il est nécessaire d'avoir téléchargé [SFML](https://www.sfml-dev.org/fr/download/) ainsi que d'avoir copié la police Arial dans le sous-dossier build/Fonts
+Nous avons également utilisé la librairie graphique SFML afin d'obtenir un rendu graphique optimal. Pour cela, il est nécessaire d'avoir téléchargé [SFML](https://www.sfml-dev.org/fr/download/) ainsi que d'avoir copié la police Arial dans le sous-dossier build/Fonts.  
 Sous Windows voici comment compiler notre projet :
 ```
 mkdir build
@@ -47,7 +48,7 @@ cd build
 cmake .. -G "MinGW Makefiles" -DCatch2_DIR=" ~/Catch2/lib/cmake/Catch2"  # chemin pour Catch2 à modifier
 mingw32-make
 ```
-Pour lancer une partie avec l'interface graphique SFML, il faut faire 
+Pour lancer une partie avec l'interface graphique SFML, il faut se placer dans build et faire 
 ```
 ./bin/snakeProject
 ``` 
@@ -58,7 +59,7 @@ Et pour lancer les tests,
 
 ### Comment jouer 
 Une fois la fenêtre graphique ouverte, il suffit de taper sur une des quatres touches directions du clavier et le serpent s'orientera dans la direction indiquée. La partie ne commence pas tant qu'aucune touche a été touchée. Le score s'affiche en haut à gauche et sera affiché lors de la fin de la partie. La partie s'arrête à la première collisions du serpent sur lui-même ou contre le mur.  
-Attention aux collisions et amusez-vous bien !    
+Attention aux collisions et bonne partie !    
 
 
 
