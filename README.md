@@ -3,7 +3,7 @@
 Ce projet a pour objectif d'implémenter le jeu Snake qui consiste à manger des pommes présentes sur le plateau afin de grandir tout en évitant une collision contre le mur ou sur soi-même.
 
 ### Structure du projet 
-Voici la structure du projet, décomoosée en différents dossiers et fichiers.
+Voici la structure du projet, décomposée en différents dossiers et fichiers :
 ```
 .
 ├── include
