@@ -58,7 +58,7 @@ Et pour lancer les tests,
 ```
 
 ### Comment jouer 
-Une fois la fenêtre graphique ouverte, il suffit de taper sur une des quatres touches directions du clavier et le serpent s'orientera dans la direction indiquée. La partie ne commence pas tant qu'aucune touche a été touchée. Le score s'affiche en haut à gauche et sera affiché lors de la fin de la partie. La partie s'arrête à la première collisions du serpent sur lui-même ou contre le mur.  
+Une fois la fenêtre graphique ouverte, il suffit de taper sur une des quatres touches directions du clavier et le serpent s'orientera dans la direction indiquée. La partie ne commence pas tant qu'aucune touche a été touchée. Le score s'affiche en haut à gauche et sera affiché lors de la fin de la partie. La partie s'arrête à la première collision du serpent sur lui-même ou contre le mur.  
 Attention aux collisions et bonne partie !    
 
 
